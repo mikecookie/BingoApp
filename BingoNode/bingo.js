@@ -7,8 +7,6 @@ var mysql = require('mysql');
 var he = require('he');
 const util = require('util');
 
-console.log(util.inspect(process.env));
-
 var baseBingoArr = Array.from({length: 75}, (v, k) => k+1);
 var bingoArr = baseBingoArr.slice();
 shuffle(bingoArr);
@@ -32,13 +30,15 @@ Status:
 var bingoStatus = 0;
 var clientList = {};
 var clientChat = [];
-/*
+
 var con = mysql.createConnection({
-  host: "localhost",
-  database: "bingo",
-  user: "",
-  password: ""
+  host: 'mysql://' + process.env.OPENSHIFT_MYSQL_DB_HOST + ':' + process.env.OPENSHIFT_MYSQL_DB_PORT + '/',
+  user: process.env.OPENSHIFT_MYSQL_DB_USERNAME,
+  password: process.env.OPENSHIFT_MYSQL_DB_PASSWORD,
+  database: "bingo"
 });
+
+console.log("TEST: " + util.inspect(process.env));
 
 con.connect(function(err) {
   if (err) throw err;
@@ -48,9 +48,6 @@ con.connect(function(err) {
     gameNo = result[0].maxGameNo;
   });
 });
-*/
-
-var gameNo = 1;
 
 /*
 app.get('/', function(req, res){
