@@ -205,7 +205,7 @@ io.on('connection', function(socket){
 });
 
 http.listen(8080, function(){
-	console.log('listening on *:8080');
+	console.log('listening on *:8080 - v2');
 });
 
 function changeStatus(newStatus, miscVal = null) {
