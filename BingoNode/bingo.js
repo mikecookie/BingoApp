@@ -27,6 +27,7 @@ Status:
 4: paused (bingo called)
 5: ended 18002900886
 */
+
 var bingoStatus = 0;
 var clientList = {};
 var clientChat = [];
