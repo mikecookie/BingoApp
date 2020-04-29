@@ -5,7 +5,9 @@ var Promise = require("bluebird");
 var randomNumber = require("random-number-csprng");
 var mysql = require('mysql');
 var he = require('he');
-//const util = require('util');
+const util = require('util');
+
+console.log(util.inspect(process.env));
 
 var baseBingoArr = Array.from({length: 75}, (v, k) => k+1);
 var bingoArr = baseBingoArr.slice();
